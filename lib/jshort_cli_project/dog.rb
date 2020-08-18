@@ -1,0 +1,4 @@
+class JshortCliProject::Dog
+
+
+end

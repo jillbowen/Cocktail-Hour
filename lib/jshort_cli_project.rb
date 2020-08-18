@@ -1,4 +1,9 @@
-require "jshort_cli_project/version"
+require 'pry'
+
+require_relative "jshort_cli_project/version"
+require_relative "jshort_cli_project/cli"
+require_relative "jshort_cli_project/dog"
+require_relative "jshort_cli_project/api"
 
 module JshortCliProject
   class Error < StandardError; end
