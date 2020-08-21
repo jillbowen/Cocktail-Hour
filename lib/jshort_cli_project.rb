@@ -1,7 +1,8 @@
 require 'dotenv'
 require 'pry'
-require 'rest-client'
+require 'httparty'
 require 'json'
+
 
 
 require_relative "./jshort_cli_project/version"
