@@ -1,4 +1,4 @@
-require 'dotenv'
+# require 'dotenv'
 require 'pry'
 require 'httparty'
 require 'json'

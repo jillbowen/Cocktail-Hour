@@ -4,7 +4,6 @@ PATH
     jshort_cli_project (0.1.0)
       dotenv
       httparty
-      shaken_not_stirred (~> 0.0.7)
 
 GEM
   remote: https://rubygems.org/
@@ -19,8 +18,6 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     rake (12.3.2)
-    shaken_not_stirred (0.0.7)
-      httparty (~> 0.15.7)
 
 PLATFORMS
   ruby
