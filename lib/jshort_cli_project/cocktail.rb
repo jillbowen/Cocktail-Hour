@@ -1,0 +1,4 @@
+class JshortCliProject::Cocktail
+
+
+end
