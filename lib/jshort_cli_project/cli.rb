@@ -1,61 +1,38 @@
 require_relative "./version.rb"
 class JshortCliProject::CLI 
-    
+
     def start
-        puts "Welcome to cocktail hour! Do you need some 'gin'spiration?"
-        JshortCliProject::API.get_gin_cocktail
-        JshortCliProject::API.get_vodka_cocktail
-        JshortCliProject::API.get_whiskey_cocktail
-        JshortCliProject::API.get_rum_cocktail
-        JshortCliProject::API.get_tequila_cocktail
-        choose_spirit
+        puts "Welcome to cocktail hour! Do you need some 'gin'spiration? Type y or n"
+        @cocktail = JshortCliProject::API.get_cocktail_info(name, instructions)
+            @input = gets.strip
+                validate_input
     end
 
-    def choose_spirit
-        puts <<-DOC
-            Please select a spirit:
-            For gin type '1' 
-            For vodka type '2' 
-            For whiskey type '3' 
-            For rum type '4' 
-            For tequila type '5'
-        DOC
-        #heredoc allows for a long string in a paragraph format
-        get_spirit_input
-    end
-
-    def get_spirit_input
-        @spirit_input = gets.strip.to_i
-        validate_input
+    def validate_input
+        if @input == 'y' 
+            get_cocktail
+        elsif @input != 'y' && @input != 'n'
+            "That doesn't seem right, have you had one too many? Let's try again."
+            start
+        else
+            @input == 'n'
+            puts "Ok, I'll be here if you need to shake things up!"
+        end
     end
     
-    def validate_input
-        if @spirit_input < 1 || @spirit_input > 5
-            puts "That doesn't seem right! Did you start cocktail hour without me?"
-            choose_spirit
-        else @spirit_input >= 1 || @spirit_input <= 5
-            list_cocktails
-        end
-    end
-
-    def list_cocktails
-        if @spirit_input == 1
-            puts "Aviation" #insert gin cocktail
-        elsif @spirit_input == 2 
-            puts "Moscow Mule" #insert vodka cocktail
-        elsif @spirit_input == 3
-            puts "Whiskey Sour" #insert whiskey cocktail
-        elsif @spirit_input == 4
-            puts "Hemingway Special" #insert rum cocktail
-        else @spirit_input == 5
-            puts "Margarita" #insert tequila cocktail
-        end
-        puts "Enjoy your cocktail!"
+    def get_cocktail
+        #ok so how do I get the info to here? ... why is this stumping me so fing hard
+        puts <<-DOC 
+        How about this one?
+        
+        Enjoy!
+        DOC
         another_round?
     end
 
+
     def another_round?
-        puts "Would you like another round? y or n"
+        puts "Would you like another round? Type y or n"
         get_answer
     end
 
@@ -66,12 +43,12 @@ class JshortCliProject::CLI
 
     def validate_answer
         if @answer == 'y' 
-            choose_spirit
+            get_cocktail
         elsif @answer != 'y' && @answer != 'n' 
             puts "You seem a bit pickled! I didn't understand your answer, let's try again."
             another_round?
         else @answer == 'n' 
-            puts "You don't have to go home, but you can't stay here. Goodnight!"
+            puts "You don't have to go home, but you can't stay here! Have a great night!"
         end
     end
 end

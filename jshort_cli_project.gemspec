@@ -27,5 +27,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_dependency "httparty"
   spec.add_dependency "dotenv"
-  # spec.add_dependency "shaken_not_stirred", "~> 0.0.7"
 end
