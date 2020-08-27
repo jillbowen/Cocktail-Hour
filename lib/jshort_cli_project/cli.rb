@@ -2,8 +2,7 @@ require_relative "./version.rb"
 class JshortCliProject::CLI 
 
     def start
-        puts "Welcome to cocktail hour! Do you need some 'gin'spiration? Type y or n"
-        @cocktail = JshortCliProject::API.get_cocktail_info(name, instructions)
+        puts "\nWelcome to cocktail hour! Do you need some 'gin'spiration? Type y or n\n"
             @input = gets.strip
                 validate_input
     end
@@ -12,27 +11,29 @@ class JshortCliProject::CLI
         if @input == 'y' 
             get_cocktail
         elsif @input != 'y' && @input != 'n'
-            "That doesn't seem right, have you had one too many? Let's try again."
+            puts "\nThat doesn't seem right, have you had one too many? Let's try again."
+            sleep(1)
             start
         else
             @input == 'n'
-            puts "Ok, I'll be here if you need to shake things up!"
+            puts "\nOk, I'll be here if you need to shake things up!\n\n"
         end
     end
     
     def get_cocktail
-        #ok so how do I get the info to here? ... why is this stumping me so fing hard
-        puts <<-DOC 
-        How about this one?
-        
-        Enjoy!
-        DOC
+        puts "\nHow about this one?"
+        sleep(1)
+        JshortCliProject::Cocktail.all.each {|c| puts "\n#{c.name}\n\n Ingredients: #{c.ingredients}\n\n #{c.instructions}"}
+        sleep(6)
+        puts "\nEnjoy!"
+        JshortCliProject::Cocktail.clear
         another_round?
     end
 
 
     def another_round?
-        puts "Would you like another round? Type y or n"
+        sleep(3)
+        puts "\nWould you like another round? Type y or n\n"
         get_answer
     end
 
@@ -43,12 +44,13 @@ class JshortCliProject::CLI
 
     def validate_answer
         if @answer == 'y' 
+            puts "Here's another!\n"
             get_cocktail
         elsif @answer != 'y' && @answer != 'n' 
             puts "You seem a bit pickled! I didn't understand your answer, let's try again."
             another_round?
         else @answer == 'n' 
-            puts "You don't have to go home, but you can't stay here! Have a great night!"
+            puts "\nYou don't have to go home, but you can't stay here! Have a great night!\n\n"
         end
     end
 end
