@@ -1,9 +1,7 @@
 
 # JshortCliProject
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jshort_cli_project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Cocktail Hour! This CLI uses The Cocktail DB API so you can get ideas for a great cocktail. 
 
 ## Installation
 
@@ -23,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To begin, run bin/jshort_cli_project from the terminal and follow the CLI.
 
 ## Development
 
