@@ -30,7 +30,6 @@ class JshortCliProject::CLI
         another_round?
     end
 
-
     def another_round?
         sleep(3)
         puts "\nWould you like another round? Type y or n\n"
