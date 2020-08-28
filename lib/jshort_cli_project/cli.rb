@@ -2,7 +2,7 @@ require_relative "./version.rb"
 class JshortCliProject::CLI 
 
     def start
-        puts "\nWelcome to cocktail hour! Do you need some 'gin'spiration? Type y or n\n"
+        print "\nWelcome to cocktail hour! Do you need some 'gin'spiration? Type y or n: "
             @input = gets.strip
                 validate_input
     end
@@ -32,7 +32,7 @@ class JshortCliProject::CLI
 
     def another_round?
         sleep(3)
-        puts "\nWould you like another round? Type y or n\n"
+        print "\nWould you like another round? Type y or n: "
         get_answer
     end
 
