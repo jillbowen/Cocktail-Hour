@@ -1,4 +1,3 @@
-require_relative "./version.rb"
 class JshortCliProject::Cocktail
     attr_accessor :name, :ingredients, :instructions
     @@all = []

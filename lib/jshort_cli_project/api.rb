@@ -1,4 +1,3 @@
-require_relative "./version.rb"
 class JshortCliProject::API
   
     def self.get_cocktail_info       

@@ -1,10 +1,9 @@
-require_relative "./version.rb"
 class JshortCliProject::CLI 
 
     def start
-        print "\nWelcome to cocktail hour! Do you need some 'gin'spiration? Type y or n: "
+        print "\nWelcome to Cocktail Hour! Do you need some 'gin'spiration? Type y or n: "
             @input = gets.strip
-                validate_input
+                validate_input 
     end
 
     def validate_input
@@ -33,10 +32,6 @@ class JshortCliProject::CLI
     def another_round?
         sleep(3)
         print "\nWould you like another round? Type y or n: "
-        get_answer
-    end
-
-    def get_answer
         @answer = gets.strip
         validate_answer
     end
@@ -46,7 +41,7 @@ class JshortCliProject::CLI
             puts "Here's another!\n"
             get_cocktail
         elsif @answer != 'y' && @answer != 'n' 
-            puts "You seem a bit pickled! I didn't understand your answer, let's try again."
+            puts "\nYou seem a bit pickled! I didn't understand your answer, let's try again."
             another_round?
         else @answer == 'n' 
             puts "\nYou don't have to go home, but you can't stay here! Have a great night!\n\n"
