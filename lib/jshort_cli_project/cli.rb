@@ -22,7 +22,7 @@ class JshortCliProject::CLI
     def get_cocktail
         puts "\nHow about this one?"
         sleep(1)
-        JshortCliProject::Cocktail.all.each {|c| puts "\n#{c.name}\n\n Ingredients: #{c.ingredients}\n\n #{c.instructions}"}
+        JshortCliProject::Cocktail.all.each {|c| puts "\n#{c.name}\n\n Ingredients: #{c.measurement_ingredient}\n\n#{c.instructions}"}
         sleep(6)
         puts "\nEnjoy!"
         JshortCliProject::Cocktail.clear

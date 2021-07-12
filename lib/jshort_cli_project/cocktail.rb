@@ -1,11 +1,11 @@
 class JshortCliProject::Cocktail
-    attr_accessor :name, :ingredients, :instructions
+    attr_accessor :name, :measurement_ingredient, :instructions
     @@all = []
     
-    def initialize(name, ingredients, instructions)
+    def initialize(name, measurement_ingredient, instructions)
         @name = name
+        @measurement_ingredient = measurement_ingredient.compact.join(' ')
         @instructions = instructions
-        @ingredients = ingredients.compact.join(', ')
         save
     end
     
