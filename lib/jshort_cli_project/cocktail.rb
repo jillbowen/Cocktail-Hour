@@ -4,7 +4,7 @@ class JshortCliProject::Cocktail
     
     def initialize(name, measurement_ingredient, instructions)
         @name = name
-        @measurement_ingredient = measurement_ingredient.compact.join(' ')
+        @measurement_ingredient = measurement_ingredient.compact
         @instructions = instructions
         save
     end
